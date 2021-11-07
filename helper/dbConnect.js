@@ -4,9 +4,9 @@ const getMongooseConnection = () => {
   if (!conn) {
     const mongoose = require("mongoose");
     mongoose.Promise = global.Promise;
-
+    const {MONGO_DB_HOST, MONGO_DB_PORT, MONGO_DB_NAME} = JSON.parse(process.env.MONGO);
     if (mongoose.connection._readyState != 1) {
-      const uri = `mongodb://${process.env.MONGO_DB_HOST}:${process.env.MONGO_DB_PORT}/${process.env.MONGO_DB_NAME}`;
+      const uri = `mongodb://${MONGO_DB_HOST}:${MONGO_DB_PORT}/${MONGO_DB_NAME}`;
       //const uri = "mongodb://localhost:27017/test";
       mongoose.connect(uri, {
         useNewUrlParser: true
