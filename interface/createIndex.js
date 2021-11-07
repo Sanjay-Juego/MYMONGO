@@ -13,5 +13,3 @@ module.exports = async function createIndex(
     console.log(err);
   }
 };
-
-
