@@ -1,6 +1,6 @@
 let conn = null;
 
-const getMongooseConnection = () => {
+const getConnection = () => {
   if (!conn) {
     const mongoose = require("mongoose");
     mongoose.Promise = global.Promise;
@@ -20,4 +20,4 @@ const getMongooseConnection = () => {
   return conn;
 };
 
-module.exports.getMongooseConnection = getMongooseConnection;
+module.exports.getConnection = getConnection;
