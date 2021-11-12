@@ -2,13 +2,12 @@ const createModel = require("./interface/createModel");
 const createSchema = require("./interface/createSchema");
 const createIndex = require("./interface/createIndex");
 
-
 class MONGOManager {
   /**
    * Database Create Schema
    * @function createSchema
    * @param {Object} collectionStructure
-   * @returns {Promise<Number>} 
+   * @returns {Promise<Number>}
    */
   static createSchema = createSchema;
 
@@ -25,12 +24,11 @@ class MONGOManager {
   /**
    * Database Create Index
    * @function createIndex
-   * @param {string} collectionName 
+   * @param {string} collectionName
    * @param {Object} index
    * @returns {Promise<Object>}
    */
   static createIndex = createIndex;
-
 }
 
 module.exports = MONGOManager;
